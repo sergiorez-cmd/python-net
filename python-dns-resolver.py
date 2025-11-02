@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Programação de redes com python3
 # https://docs.python.org/3/library/socket.html
-# Resolver endereço IP de um host na Internet
+# Resolver endereço IP e FQDN de um host na Internet
 
 import socket
 
