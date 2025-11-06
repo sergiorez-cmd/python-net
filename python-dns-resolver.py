@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
 # Programação de redes com python3
-# https://docs.python.org/3/library/socket.html
-# Resolver endereço IP de um host na Internet
+# https://pypi.org/project/dnspython/
+# Consulta básica Servidores de DNS
 
-import socket
+import dns.resolver
 
-add_host = input('Digite um endereço de host www.example.com:')
+add_name = input ('Digite o nome de um domínio Ex:www.example.com:')
 
-def resolv(hostname):
-    address = socket.gethostbyname(hostname)
-    fqdn = socket.getfqdn(hostname)
-    print ('O endereço IP de {} é {} FQDN: {}'.format(hostname, address, fqdn))
+# Loop para procurar diferentes registros DNS
+def ns_lookup(name):
+    for qtype in 'A', 'AAAA', 'CNAME', 'MX', 'NS' :
+        answer = dns.resolver.resolve(name, qtype, raise_on_no_answer=False)
+        if answer.rrset is not None:
+            print (answer.rrset)
 
 if __name__ == '__main__':
-    resolv(add_host)
+    ns_lookup(add_name)
