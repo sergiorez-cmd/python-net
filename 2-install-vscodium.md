@@ -1,5 +1,5 @@
 ```bash
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y
 ```
 ```bash
 sudo apt install dirmngr software-properties-common apt-transport-https curl -y
