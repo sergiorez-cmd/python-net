@@ -13,10 +13,7 @@ curl -fSsL https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.g
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/vscodium.gpg] https://download.vscodium.com/debs vscodium main" | sudo tee /etc/apt/sources.list.d/vscodium.list
 ```
 ```bash
-sudo apt update
-```
-```bash
-sudo apt install codium -y
+sudo apt update && sudo apt install codium -y
 ```
 ```bash
 sudo apt install codium-insiders -y
