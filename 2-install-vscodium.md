@@ -19,3 +19,4 @@ sudo apt install codium -y
 ```bash
 sudo apt install codium-insiders -y
 ``` 
+https://vscodium.com
